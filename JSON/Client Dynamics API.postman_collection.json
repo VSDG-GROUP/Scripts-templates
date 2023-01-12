@@ -1,0 +1,1082 @@
+{
+	"info": {
+		"_postman_id": "6c512fe8-6365-4eae-874e-77fcac88c20d",
+		"name": "Client Dynamics API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1536198"
+	},
+	"item": [
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "List Contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?agency_id={{agency_id}}&api_key={{api_key}}&scope=Contacts&search_criteria=correlation_lead_id&search_value=6477",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "{{agency_id}}"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "scope",
+									"value": "Contacts"
+								},
+								{
+									"key": "search_criteria",
+									"value": "correlation_lead_id"
+								},
+								{
+									"key": "search_value",
+									"value": "6477"
+								},
+								{
+									"key": "help",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "addtnl_search_criteria",
+									"value": "lname",
+									"disabled": true
+								},
+								{
+									"key": "addtnl_search_value",
+									"value": "WHEATON",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "agency_id",
+									"value": "{{agency_id}}",
+									"type": "text"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "Contacts",
+									"type": "text"
+								},
+								{
+									"key": "method",
+									"value": "add",
+									"type": "text"
+								},
+								{
+									"key": "fname",
+									"value": "James",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "Buchert",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jbuchert50@outlook.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "727-776-4326",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "401 Ventura Dr",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Oldsmar",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "FL",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "34677",
+									"type": "text"
+								},
+								{
+									"key": "mname",
+									"value": "B",
+									"type": "text"
+								},
+								{
+									"key": "lead_source",
+									"value": "QuoteRush",
+									"type": "text"
+								},
+								{
+									"key": "lead_source_details",
+									"value": "They are the boss",
+									"type": "text"
+								},
+								{
+									"key": "contact_status",
+									"value": "New Lead",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "help",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "agency_id",
+									"value": "{{agency_id}}",
+									"type": "text"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "Contacts",
+									"type": "text"
+								},
+								{
+									"key": "method",
+									"value": "add",
+									"type": "text"
+								},
+								{
+									"key": "fname",
+									"value": "James",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "Buchert",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jbuchert50@outlook.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "727-776-4326",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "401 Ventura Dr",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Oldsmar",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "FL",
+									"type": "text"
+								},
+								{
+									"key": "zip",
+									"value": "34677",
+									"type": "text"
+								},
+								{
+									"key": "mname",
+									"value": "B",
+									"type": "text"
+								},
+								{
+									"key": "lead_source",
+									"value": "QuoteRush",
+									"type": "text"
+								},
+								{
+									"key": "lead_source_details",
+									"value": "They are the boss",
+									"type": "text"
+								},
+								{
+									"key": "contact_status",
+									"value": "New Lead",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "help",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposals",
+			"item": [
+				{
+					"name": "List Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?agency_id={{agency_id}}&api_key={{api_key}}&scope=Proposals&search_criteria=correlation_lead_id&search_value=7011",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "{{agency_id}}"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "scope",
+									"value": "Proposals"
+								},
+								{
+									"key": "search_criteria",
+									"value": "correlation_lead_id"
+								},
+								{
+									"key": "search_value",
+									"value": "7011"
+								},
+								{
+									"key": "help",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Proposal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"api_key":"{{api_key}}\",\r\n  \"Agency_Id":"{{Agency_Id}}\",\r\n  \"Lead\": 17905,\r\n  \"Submitter":"james@quoterush.com\",\r\n  \"Notes":"I am testing notes here to display on the proposal. <br><br>I am even including multiple lines.\",\r\n  \"Options\": [\r\n    {\r\n    \"Name":"Premium\",\r\n    \"Recommended\": true,\r\n    \"HomeQID\": 125527,\r\n    \"AutoQID\": 1165,\r\n    \"FloodQID\": 1391,\r\n    \"Notes":"This quote is the best choice. Because .......\"\r\n    },\r\n    {\r\n    \"Name":"Essential\",\r\n    \"Recommended\": false,\r\n    \"HomeQID\": 124937,\r\n    \"AutoQID\": 1096,\r\n    \"FloodQID\": 5105,\r\n    \"Notes":"This quote provides less coverage but it is still adequate. Because .......\"\r\n    },\r\n    {\r\n    \"Name":"Least Coverage\",\r\n    \"Recommended\": false,\r\n    \"HomeQID\": 124937,\r\n    \"AutoQID\": null,\r\n    \"FloodQID\": 1150,\r\n    \"Notes":"This quote is the best choice. Because .......\"\r\n    }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proposals.keepthemsmiling.com/add-proposal.php",
+							"protocol": "https",
+							"host": [
+								"proposals",
+								"keepthemsmiling",
+								"com"
+							],
+							"path": [
+								"add-proposal.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotes",
+			"item": [
+				{
+					"name": "List Quotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?agency_id={{agency_id}}&api_key={{api_key}}&scope=Quotes&search_criteria=correlation_lead_id&search_value=5442&method=list",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "{{agency_id}}"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "scope",
+									"value": "Quotes"
+								},
+								{
+									"key": "search_criteria",
+									"value": "correlation_lead_id"
+								},
+								{
+									"key": "search_value",
+									"value": "5442"
+								},
+								{
+									"key": "method",
+									"value": "list"
+								},
+								{
+									"key": "help",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quote Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?agency_id={{agency_id}}&api_key={{api_key}}&scope=Quotes&search_criteria=correlation_lead_id&search_value=5442&method=details",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "agency_id",
+									"value": "{{agency_id}}"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "scope",
+									"value": "Quotes"
+								},
+								{
+									"key": "search_criteria",
+									"value": "correlation_lead_id"
+								},
+								{
+									"key": "search_value",
+									"value": "5442"
+								},
+								{
+									"key": "method",
+									"value": "details"
+								},
+								{
+									"key": "help",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Quote Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"agency_id":"{{agency_id}}","api_key":"{{api_key}}","scope":"Quotes","correlation_lead_id":"18340","method":"add","submitter_email":"james@quoterush.com","carrier\": [\n        \"American Strategic\",\n        \"Frontline\",\n        \"Velocity\",\n        \"Universal North America\",\n        \"United\",\n        \"Tower Hill\",\n        \"Peoples Trust\"\n    ],\n    \"callbackUrl":"https://dev-cms-admin.clientdynamics.com/quote_callback.php\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://your-e-advisor.clientdynamics.com/api/api.php"
+		},
+		{
+			"key": "agency_id",
+			"value": "6635011506"
+		},
+		{
+			"key": "api_key",
+			"value": "9A89045010CBE5424255B437C1E32C85BC651FBB"
+		}
+	]
+}
+
+
+post for quote
+
+
+
+https://your-e-advisor.clientdynamics.com/api/api.php?agency_id=6635011506&api_key=9A89045010CBE5424255B437C1E32C85BC651FBB&scope=Quotes&search_criteria=correlation_lead_id&search_value=141401&method=details
+
+
+
+
+https://your-e-advisor.clientdynamics.com/api/api.php?agency_id=6635011506&api_key=9A89045010CBE5424255B437C1E32C85BC651FBB&scope=Contacts&search_criteria=correlation_lead_id&search_value=140082
+
+
+
+lead proposal
+
+
+https://your-e-advisor.clientdynamics.com/api/api.php?agency_id=6635011506&api_key=9A89045010CBE5424255B437C1E32C85BC651FBB&scope=Contacts&search_criteria=correlation_lead_id&search_value=139705
+
+
+
+Proposal:
+
+
+ https://proposals.keepthemsmiling.com/add-proposal.php?api_key=9A89045010CBE5424255B437C1E32C85BC651FBB&agency_id=6635011506&Lead=140075
+
+ https://your-e-advisor.clientdynamics.com/api/api.php?agency_id=6635011506&api_key=9A89045010CBE5424255B437C1E32C85BC651FBB&scope=Quotes&search_criteria=correlation_lead_id&search_value=5442&method=list
+
+ */
+
+
+
+
+
+
+ {
+
+	"api_key": "9A89045010CBE5424255B437C1E32C85BC651FBB",
+	"agency_id": "6635011506",
+	"Lead": "$arr[3]"
+  
+	"Submitter": backup+qr@insurancenetwork.agency,
+  
+	"Notes": "I am testing notes here to display on the proposal. <br><br>I am even including multiple lines.",
+  
+	"Options": [
+  
+	  {
+  
+	  "Name": "Premium",
+  
+	  "Recommended": true,
+  
+	  "HomeQID": 125527,
+  
+	  "AutoQID": 1165,
+  
+	  "FloodQID": 1391,
+  
+	  "Notes": "This quote is the best choice. Because ......."
+  
+	  },
+  
+	  {
+  
+	  "Name": "Essential",
+  
+	  "Recommended": false,
+  
+	  "HomeQID": 124937,
+  
+	  "AutoQID": 1096,
+  
+	  "FloodQID": 5105,
+  
+	  "Notes": "This quote provides less coverage but it is still adequate. Because ......."
+  
+	  },
+  
+	  {
+  
+	  "Name": "Least Coverage",
+  
+	  "Recommended": false,
+  
+	  "HomeQID": 124937,
+  
+	  "AutoQID": null,
+  
+	  "FloodQID": 1150,
+  
+	  "Notes": "This quote is the best choice. Because ......."
+  
+	  }
+  
+	  ]
+  
+  }
+
+
+
+
+
+
+
+  <?php
+
+$url = "https://proposals.clientdynamics.com/add-proposal.php";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Content-Type: application/json",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = <<<DATA
+ {
+              "api_key": "9A89045010CBE5424255B437C1E32C85BC651FBB",
+              "agency_id": "6635011506",
+              "Lead": "140295",
+              "Options": [
+                {
+                "Name": "Least Coverage",
+                "Recommended": false,
+                "HomeQID": 124937,
+                "AutoQID": null,
+                "FloodQID": 1150,
+                "Notes": "This quote is the best choice. Because ......."
+                }
+                ]
+            }
+DATA;
+
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+$resp = curl_exec($curl);
+curl_close($curl);
+var_dump($resp);
+
+?>
+
+
+
+
+
+&scope=Proposals&search_criteria=correlation_lead_id&search_value=7011
+
+
+
+<?php
+
+$xml = file_get_contents('php://input');
+$xml2 = json_decode($xml);
+
+$first = $xml2->NameFirst;
+$last = $xml2->NameLast;
+$email = $xml2->EmailAddress;
+$address = $xml2->Address;
+
+
+
+
+
+
+
+$url = "https://quoterush.com/Importer/Json/Import/XNSJ45649959";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+    "Accept: application/json",
+   "webpassword: pass"
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = <<<DATA
+   {"Client": {
+      "NameFirst": "vsdg",
+      "NameLast": "last",
+      "PhoneNumber": "(000)000-0000",
+      "PhoneNumberAlt": "",
+      "PhoneCell": "",
+      "EmailAddress": "0000@000.00",
+      "Address": "address",
+      "City": "POMPANO BEACH",
+      "State": "FL",
+      "Zip": "33073",
+      "County": "Broward",
+    },
+
+    "HO": {
+        "FormType": "HO-3: Home Owners Policy",
+        "Address": "8444 NORTHLAKE PKWY",
+        "Address2": "",
+        "City": "ORLANDO",
+        "State": "FL",
+        "Zip": "32827",
+        "County": "Orange",
+        "WithinCityLimits": false,
+        "NewPurchase": "No",
+        "PurchaseDate": "11/26/2012",
+        "PurchasePrice": "345000",
+        "UsageType": "Primary",
+        "MonthsOwnerOccupied": "9 months or more",
+        "MilesToCoast": "39.75",
+        "BCEG": "04",
+        "Territory": "49",
+        "ProtectionClass": "4",
+        "FloodZone": "X",
+        "FloodPolicy": false,
+        "WindOnlyEligible": "No",
+        "Notes": "",
+        "YearBuilt": "2012",
+        "StructureType": "Single Family",
+        "Families": "1",
+        "Stories": "1",
+        "Floor": "1",
+        "SquareFeet": "2374",
+        "UnitsInFirewall": "1",
+        "UnitsInBuilding": "12",
+        "ConstructionType": "Masonry",
+        "Construction": "Concrete Block",
+        "FrameConstruction": "",
+        "MasonryConstruction": "Concrete Block",
+        "FoundationType": "Slab",
+        "BasementPercentFinished": "",
+        "RoofShape": "Gable",
+        "RoofPortionFlat": false,
+        "RoofHipPercent": "N/A",
+        "RoofMaterial": "Composite Shingle",
+        "Pool": "Inground - 300 - 600 sq. ft.",
+        "PoolScreenedEnclosure": true,
+        "PoolFence": true,
+        "PoolDivingboardSlide": false,
+        "ScreenedEnclosureSquareFeet": "560",
+        "ScreenedCoverage": "$10,000",
+        "Jacuzzi": false,
+        "HotTub": false,
+        "UnderRenovation": false,
+        "UnderConstruction": false,
+        "UpdateRoofYear": "2012",
+        "UpdateRoofType": "Full",
+        "UpdatePlumbingYear": "",
+        "PlumbingType": "PVC",
+        "UpdateElectricalYear": "",
+        "ElectricalType": "Circuit Breakers",
+        "UpdateHeatingYear": "",
+        "PrimaryHeatSource": "Electric",
+        "WaterHeaterYear": "2012",
+        "CoverageA": "225000",
+        "CoverageB": "4500",
+        "CoverageBPercent": "2%",
+        "CoverageC": "56250",
+        "CoverageCPercent": "25%",
+        "CoverageD": "22500",
+        "CoverageDPercent": "10%",
+        "CoverageE": "$300,000",
+        "CoverageF": "$5,000",
+        "AllOtherPerilsDeductible": "$1,000",
+        "HurricaneDeductible": "2%",
+        "NamedStormDeductible": "",
+        "WindHailDeductible": "",
+        "CurrentlyInsured": "Yes",
+        "AnyLapses": "No",
+        "CurrentCarrier": "Unknown",
+        "CurrentAnnualPremium": "3988",
+        "CurrentPolicyNumber": "1324567",
+        "PolicyEffectiveDate": "04/01/2020",
+        "PropertyCurrentPolicyExpDate": "04/01/2020",
+        "Mortgage": "No",
+        "BillTo": "Insured Pay Plan",
+        "Claims": "Yes",
+        "ClaimsInfo": "",
+        "PriorLiabilityLimits": "",
+        "LuxuryItems": "",
+        "HaveWindMitForm": true,
+        "WindMitFormType": "2012",
+        "RoofCovering": "Meets FBC 2001",
+        "RoofDeckAttachment": "Level A",
+        "RoofWallConnection": "Single Wraps",
+        "SecondaryWaterResistance": "No",
+        "OpeningProtection": "Hurricane Protection",
+        "OpeningProtectionA3": false,
+        "Terrain": "Exposure B",
+        "WindSpeedDesign": "",
+        "BuildingCode": "",
+        "WindMitInspectionCompany": "Inspection Express",
+        "WindMitInspectorName": "Andy",
+        "WindMitInspectorLicenseNumber": "1234",
+        "WindMitigationInspectionDate": "02/29/2020",
+        "WPI8": false,
+        "BurglarAlarm": "None",
+        "FireAlarm": "None",
+        "FireHydrant": "Within 1000 Feet",
+        "FireStation": "Within 5 Miles",
+        "GatedCommunity": "24 hr Security",
+        "Sprinklers": "None",
+        "BusinessOnPremises": "",
+        "Subdivision": "",
+        "ProtectedSubdivision": false,
+        "DogLiability": false,
+        "EPolicy": false,
+        "EquipmentBreakdown": false,
+        "FloodEndorsement": false,
+        "ASIProgressiveAutoDiscount": false,
+        "IdentityTheft": true,
+        "IncreaseReplacementCostOnDwelling": true,
+        "OpenWaterExposure": false,
+        "PersonalInjuryCoverage": true,
+        "OptionalPersonalPropertyReplacementCost": true,
+        "RefrigeratedContents": false,
+        "Smokers": false,
+        "ServiceLine": false,
+        "SinkholeCoverage": false,
+        "TheftVandalism": false,
+        "WaterDamageExclusion": false,
+        "WoodBurningStove": false,
+        "AccreditedBuilder": false,
+        "AccreditedBuilderName": "",
+        "AdditionalLawOrdinance": "25%",
+        "FungusMold": "$10,000",
+        "LossAssessment": "",
+        "WaterBackup": true,
+        "WaterBackupAmount": "$10,000",
+        "EarthquakeDeductible": "",
+        "IBHS": "",
+        "BuildingCodeDiscount": "",
+        "ImpactResistantRoof": "",
+        "WaterDamageFoundation": false,
+        "RoofLossSettlement": "Replacement Cost",
+        "MediationArbitration": true,
+        "Kitchen1Type": "Builders Grade",
+        "Kitchen1Count": "1",
+        "FullBathType": "Full Builders Grade",
+        "FullBathCount": "2",
+        "HalfBathType": "Half Builders Grade",
+        "HalfBathCount": "1",
+        "GarageList": [
+          {
+            "Type": "Attached",
+            "Capacity": "1",
+            "SquareFeet": "280",
+            "Deleted": false
+          },
+          {
+            "Type": "Detached",
+            "Capacity": "1",
+            "SquareFeet": "280",
+            "Deleted": false
+          }
+        ],
+        "WallHeight": "9",
+        "CentralHeatAndAir": "Yes",
+        "Fireplaces": "None",
+        "Stoves": "",
+        "Carpet": "",
+        "Hardwood": "40",
+        "Vinyl": "10",
+        "Tile": "50",
+        "Marble": "",
+        "Laminate": "",
+        "Terrazzo": "",
+        "QualityGrade": "Standard",
+        "FoundationShape": "6-7 Corners - L Shape",
+        "SiteAccess": "",
+        "RCEStyle": "",
+        "PorchDeckPatio": "Porch - Open , 49sf*Porch - Open , 14sf*Porch - Open , 168sf",
+        "underwriting": {
+          "Bankruptcy": false,
+          "BankruptcyYears": "",
+          "InsuranceCanceled": false,
+          "Conviction": false,
+          "MoreThan5Acres": true,
+          "NotVisible": false,
+          "NearIndustrial": false,
+          "SinkholeActivity": false,
+          "ExistingDamage": false,
+          "FireViolations": false,
+          "PolybutylenePlumbing": false,
+          "CircuitBreakerType": false,
+          "ElectricAmps": "",
+          "PropertyConverted": false,
+          "GarageConverted": false,
+          "OilStorage": false,
+          "DogWithBiteHistory": false,
+          "ViciousDog": false,
+          "FarmAnimals": false,
+          "FarmAnimalDesc": "",
+          "ExoticAnimals": false,
+          "ExoticAnimalDesc": "",
+          "DogBreeds": "",
+          "AbandonedVehicle": false,
+          "RoommatesBoarders": false,
+          "DomesticEmployee": false,
+          "Trampoline": false,
+          "SkateboardRamp": false,
+          "Rented": false,
+          "Unoccupied8Weeks": false,
+          "RentalTerm": "",
+          "FireExtinguisher": false,
+          "Deadbolts": false,
+          "OverWater": false,
+          "ForSale": false,
+          "Foreclosure": false,
+          "DaysVacant": "",
+          "FoundationNotSecured": false,
+          "WaterHeaterNotSecured": false,
+          "CrippleWalls": false,
+          "CrippleWallsBraced": false,
+          "OnCliff": false,
+          "OverEarthquake": false
+        },
+        "CovAFromClient": false,
+        "SageSurePolicyId": null
+      }
+
+
+
+}
+DATA;
+if (empty($xml)) {
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+    
+} else {
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $xml);
+
+}
+
+
+
+$resp = curl_exec($curl);
+curl_close($curl);
+echo($resp);
+sleep(10);
+$arr = explode(' ', $resp);
+
+$arr = str_replace('#','', $arr);
+
+
+
+
+$headers = "From: " . strip_tags("no-reply@insurancenetwork.agency") . "\r\n";
+$headers .= "Reply-To: ". strip_tags("no-reply@insurancenetwork.agency") . "\r\n";
+//$headers .= "CC: . $email .\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+//$headers = 'From: ricochet@insurancenetwork.agency';
+
+$subject = "Lead posted to qr";
+
+$message = "<html><body style='margin: 2ch;font-family: arial;font-size: 1.6rem;'>";
+
+$message .= $arr[3];
+
+$message .= "</body></html>";
+$to = 'drodriguez@insurancenetwork.agency';
+
+
+mail($to, $subject,$message,$headers);
+echo "Sent";
+
+
+
+
+if($arr[0] == 'Success'){
+
+
+
+  $url = "https://proposals.clientdynamics.com/add-proposal.php";
+
+  $curl = curl_init($url);
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  
+  $headers = array(
+     "Accept: application/json",
+     "Content-Type: application/json",
+  );
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+  
+  $data = <<<DATA
+  {"api_key": "9A89045010CBE5424255B437C1E32C85BC651FBB",
+      "Agency_Id": "0c9a1758-33aa-11ea-b9f6-000d3a7ae61a",
+      "Lead": "$arr[3]",
+      "Submitter": "backup+quote@insurancenetwork.agency",
+      "Notes": "I am testing notes here to display on the proposal. <br><br>I am even including multiple lines.",
+      "Options": [
+          {
+              "Name": "Premium",
+              "Recommended": true,
+              "HomeQID": 125527,
+              "AutoQID": 1165,
+              "FloodQID": 1391,
+              "Notes": "This quote is the best choice. Because ......."
+          },
+          {
+              "Name": "Essential",
+              "Recommended": false,
+              "HomeQID": 124937,
+              "AutoQID": 1096,
+              "FloodQID": 5105,
+              "Notes": "This quote provides less coverage but it is still adequate. Because ......."
+          },
+          {
+              "Name": "Least Coverage",
+              "Recommended": false,
+              "HomeQID": 124937,
+              "AutoQID": null,
+              "FloodQID": 1150,
+              "Notes": "This quote is the best choice. Because ......."
+          }
+      ]
+      }
+  DATA;
+  
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+  
+  $resp = curl_exec($curl);
+  curl_close($curl);
+  var_dump($resp);
+
+
+
+}
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+{
+	"agency_id":"{{agency_id}}",
+	"api_key":"{{api_key}}",
+	"scope":"Quotes",
+	"correlation_lead_id":"18340",
+	"method":"add",
+	"submitter_email":"james@quoterush.com",
+	"carrier": "American", "Strategic","Frontline,"Velocity\",\n        \"Universal North America\",\n        \"United\",\n        \"Tower Hill\",\n        \"Peoples Trust\"\n    ],\n    \"callbackUrl":"https://dev-cms-admin.clientdynamics.com/quote_callback.php\"\n}"
+	{
+		"agency_id": "{{agency_id}}",
+		"api_key": "{{api_key}}",
+		"scope": "Quotes",
+		"correlation_lead_id": "18340",
+		"method": "add",
+		"submitter_email": "james@quoterush.com",
+		"carrier": [
+			"American Strategic",
+			"Frontline",
+			"Velocity",
+			"Universal North America",
+			"United",
+			"Tower Hill",
+			"Peoples Trust"
+		],
+		"callbackUrl": "https://dev-cms-admin.clientdynamics.com/quote_callback.php"
+	}"
