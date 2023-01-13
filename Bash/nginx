@@ -1,0 +1,21 @@
+sudo ufw app list
+sudo ufw allow OpenSSH
+y | sudo ufw enable
+sudo apt update
+sudo apt install nginx
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+systemctl status nginx
+nano /etc/nginx/sites-available/default
+sudo nginx -t
+sudo systemctl reload nginx
+sudo ufw allow 'Nginx Full'
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt install python-certbot-nginx
+sudo certbot --nginx -d example.com -d www.example.com
+sudo mkdir -p /var/www/example.com/html
+nano /etc/nginx/sites-available/default 
+sudo nginx -t
+sudo systemctl restart nginx
+#npm run build && scp -r ./build/* user@ip:/var/www/site_folder/

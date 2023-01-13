@@ -1,0 +1,23 @@
+mkdir react-node-app
+cd react-node-app
+npm init -y
+mkdir server
+echo 'const express = require("express");' >server/index.js
+
+echo 'const PORT = process.env.PORT || 3001;' >>server/index.js
+
+echo 'const app = express();' >>server/index.js
+
+echo 'app.listen(PORT, () => {' >>server/index.js
+echo '  console.log(`Server listening on ${PORT}`);' >>server/index.js
+echo '});' >>server/index.js
+
+
+npm i express
+
+
+npm pkg set 'scripts.start'='node server/index.js'
+
+
+npm start
+

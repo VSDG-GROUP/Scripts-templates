@@ -1,0 +1,45 @@
+read -p "Enter Domain : " domain
+read -p "Enter wordpress database name: " database
+read -p "Enter wordpress database user: " user
+read -p "Enter wordpress database password: " password
+
+sudo mysql<<MYSQL_SCRIPT
+DROP DATABASE $database;
+DROP USER $user;
+USE mysql;
+CREATE DATABASE $database;
+CREATE USER '$user'@'localhost' IDENTIFIED BY '$password';
+GRANT ALL PRIVILEGES ON *.* TO '$user'@'localhost';
+UPDATE user SET plugin='auth_socket' WHERE User='$user';
+FLUSH PRIVILEGES;
+MYSQL_SCRIPT
+
+
+
+
+wp_com=/usr/local/bin/wp
+  if [ ! -f $wp_com ]; then
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+    sudo mv wp-cli.phar /usr/local/bin/wp
+fi
+
+
+
+sudo mkdir /var/www/$domain
+cd /var/www/$domain
+sudo wp core download  --allow-root
+sudo wp core config --dbname=$database --dbuser=$user --dbpass=$password --extra-php --allow-root <<PHP
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', true);
+define('WP_MEMORY_LIMIT', '256M');
+PHP
+
+  
+sudo wp core install --url=$domain --title=$domain --admin_user=$user --admin_password=$password --admin_email=$user@${domain} --allow-root
+
+
+  sudo chmod g+w /var/www/$domain/wp-content
+  sudo chmod -R g+w /var/www/$domain/wp-content/themes
+  sudo chmod -R g+w /var/www/$domain/wp-content/plugins

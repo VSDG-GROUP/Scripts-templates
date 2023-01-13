@@ -1,0 +1,23 @@
+
+
+read -p "Enter Domain : " domain
+    mkdir /var/www/$domain
+
+echo "<VirtualHost *:80>">~/$domain.conf
+  echo "ServerAdmin webmaster@$domain">>~/$domain.conf
+  echo "ServerName $domain" >>~/$domain.conf
+  echo "ServerAlias www.$domain" >>~/$domain.conf
+  echo "DocumentRoot /var/www/$domain/">>~/$domain.conf
+  echo 'ErrorLog ${APACHE_LOG_DIR}/error.log'>>~/$domain.conf
+  echo 'CustomLog ${APACHE_LOG_DIR}/access.log combined'>>~/$domain.conf
+  echo "</VirtualHost>">>~/$domain.conf
+  sudo cp ~/$domain.conf /etc/apache2/sites-available/$domain.conf
+  rm ~/$domain.conf
+  sudo a2ensite $domain.conf
+  cp /etc/hosts hosts
+  echo "127.0.0.1 $domain" >>hosts
+  echo "127.0.0.1 localhost.local1 localhost. $domain $domain." >>hosts
+sudo cp /etc/hosts hosts
+
+ sudo systemctl reload apache2
+ sudo service apache2 restart
