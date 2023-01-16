@@ -11,7 +11,7 @@ sudo apt install mariadb-server mariadb-client
 sudo mysql_secure_installation
 
 
-sudo mysql<<MYSQL_SCRIPT
+sudo mysql - root<<MYSQL_SCRIPT
 DROP DATABASE vsdg;
 DROP USER david;
 USE mysql;
@@ -21,11 +21,6 @@ GRANT ALL PRIVILEGES ON *.* TO 'david'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
-sudo mysql -u root
-sudo mysql -u root -p
-sudo mysql_secure_installation
-sudo service mysql stop
-sudo mysql_secure_installation
 sudo service nginx restart
 sudo nano /etc/nginx/sites-enabled/default
 sudo service nginx restart
