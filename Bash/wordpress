@@ -3,6 +3,8 @@ read -p "Enter wordpress database name: " database
 read -p "Enter wordpress database user: " user
 read -p "Enter wordpress database password: " password
 
+
+
 sudo mysql<<MYSQL_SCRIPT
 DROP DATABASE $database;
 DROP USER $user;
