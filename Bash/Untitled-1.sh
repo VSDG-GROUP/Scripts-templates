@@ -65,7 +65,7 @@ lamp () {
               #  yes | sudo apt-get install curl
                 #  curl http://icanhazip.com
                   yes | sudo apt-get install mysql-server
-                    mysql -e "UPDATE mysql.user SET Password = PASSWORD('davidv') WHERE User = 'root'"
+                    mysql -e "UPDATE mysql.user SET Password = PASSWORD('vsdgv') WHERE User = 'root'"
                       mysql -e "DROP USER ''@'localhost'"
                         mysql -e "DROP USER ''@'$(hostname)'"
                       mysql -e "DROP DATABASE test"
@@ -126,7 +126,7 @@ rmh=$(grep $HOSTN ~/hosts)
         sudo sed -i".bak" "/$HOSTN/d" $ETC_HOSTS
         sudo cp $ETC_HOSTS /etc/hosts 2>/dev/null
         dat=$(sudo wp eval --path=/var/www/$domain 'echo DB_NAME;' --allow-root) 2>/dev/null
-        echo "DROP DATABASE $dat;" | mysql -uroot -pdavidv 2>/dev/null
+        echo "DROP DATABASE $dat;" | mysql -uroot -pvsdgv 2>/dev/null
 
     else
         echo "$HOSTN was not found in your $ETC_HOSTS";
@@ -486,9 +486,9 @@ sudo apt-get install mysql-server mysql-client
  systemctl start mysql
  sudo /etc/init.d/mysql start
 sudo mysql<<MYSQL_SCRIPT
-CREATE DATABASE David;
-CREATE USER 'David'@'localhost' IDENTIFIED BY 'davidv';
-GRANT ALL PRIVILEGES ON David.* TO 'David'@'localhost';
+CREATE DATABASE vsdg;
+CREATE USER 'vsdg'@'localhost' IDENTIFIED BY 'vsdgv';
+GRANT ALL PRIVILEGES ON vsdg.* TO 'vsdg'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
@@ -516,7 +516,7 @@ sudo mkdir /var/www/$1
   sudo chmod -R g+w /var/www/$domain/wp-content/plugins
 cd /var/www/$1
 sudo wp core download  --allow-root
-sudo wp core config --dbname=David --dbuser=David --dbpass=davidv --extra-php --allow-root <<PHP
+sudo wp core config --dbname=vsdg --dbuser=vsdg --dbpass=vsdgv --extra-php --allow-root <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
@@ -524,7 +524,7 @@ define('WP_MEMORY_LIMIT', '256M');
 PHP
 
   
-sudo wp core install --url=$1 --title=$1 --admin_user=admin --admin_password=David --admin_email=vsdg@vsdg.net --allow-root
+sudo wp core install --url=$1 --title=$1 --admin_user=admin --admin_password=vsdg --admin_email=vsdg@vsdg.net --allow-root
 
 
 
@@ -693,9 +693,9 @@ sudo apt-get install mysql-server mysql-client
  systemctl start mysql
  sudo /etc/init.d/mysql start
 sudo mysql<<MYSQL_SCRIPT
-CREATE DATABASE David;
-CREATE USER 'David'@'localhost' IDENTIFIED BY 'davidv';
-GRANT ALL PRIVILEGES ON David.* TO 'David'@'localhost';
+CREATE DATABASE vsdg;
+CREATE USER 'vsdg'@'localhost' IDENTIFIED BY 'vsdgv';
+GRANT ALL PRIVILEGES ON vsdg.* TO 'vsdg'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
@@ -713,7 +713,7 @@ fi
 sudo mkdir /var/www/$1
 cd /var/www/$1
 sudo wp core download  --allow-root
-sudo wp core config --dbname=David --dbuser=David --dbpass=davidv --extra-php --allow-root <<PHP
+sudo wp core config --dbname=vsdg --dbuser=vsdg --dbpass=vsdgv --extra-php --allow-root <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
@@ -721,7 +721,7 @@ define('WP_MEMORY_LIMIT', '256M');
 PHP
 
   
-sudo wp core install --url=$1 --title=$1 --admin_user=admin --admin_password=David --admin_email=vsdg@vsdg.net --allow-root
+sudo wp core install --url=$1 --title=$1 --admin_user=admin --admin_password=vsdg --admin_email=vsdg@vsdg.net --allow-root
 
 
 
@@ -733,5 +733,5 @@ sudo wp core install --url=$1 --title=$1 --admin_user=admin --admin_password=Dav
 
 CREATE DATABASE coalitiontest;
 CREATE USER 'coalitiontest'@'localhost' IDENTIFIED BY 'wordpresstest';
-GRANT ALL PRIVILEGES ON David.* TO 'coalitiontest'@'localhost';
+GRANT ALL PRIVILEGES ON vsdg.* TO 'coalitiontest'@'localhost';
 FLUSH PRIVILEGES;

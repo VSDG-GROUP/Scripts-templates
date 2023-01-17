@@ -13,11 +13,11 @@ sudo mysql_secure_installation
 
 sudo mysql - root<<MYSQL_SCRIPT
 DROP DATABASE vsdg;
-DROP USER david;
+DROP USER vsdg;
 USE mysql;
 CREATE DATABASE vsdg;
-CREATE USER 'david'@'localhost' IDENTIFIED BY 'davidv';
-GRANT ALL PRIVILEGES ON *.* TO 'david'@'localhost';
+CREATE USER 'vsdg'@'localhost' IDENTIFIED BY 'vsdg';
+GRANT ALL PRIVILEGES ON *.* TO 'vsdg'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
@@ -39,7 +39,7 @@ fi
 sudo mkdir /var/www/$1
 cd /var/www/$1
 sudo wp core download  --allow-root
-sudo wp core config --dbname=vsdg --dbuser=david --dbpass=davidv --extra-php --allow-root <<PHP
+sudo wp core config --dbname=vsdg --dbuser=vsdg --dbpass=vsdgv --extra-php --allow-root <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);

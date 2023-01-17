@@ -11,7 +11,7 @@ fi
 sudo mkdir /var/www/$1
 cd /var/www/$1
 sudo wp core download  --allow-root
-sudo wp core config --dbname=vsdg --dbuser=david --dbpass=davidv --extra-php --allow-root <<PHP
+sudo wp core config --dbname=vsdg --dbuser=vsdg --dbpass=vsdg --extra-php --allow-root <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);

@@ -48,8 +48,8 @@ sudo find /var/www/$1 -type f -exec chmod 755 {} +
 
 sudo mysql -uroot<<MYSQL_SCRIPT
 CREATE DATABASE vsdg;
-CREATE USER 'david'@'%' IDENTIFIED BY 'davidv';
-GRANT ALL PRIVILEGES ON vsdg.* TO 'david'@'%';
+CREATE USER 'vsdg'@'%' IDENTIFIED BY 'vsdgv';
+GRANT ALL PRIVILEGES ON vsdg.* TO 'vsdg'@'%';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
@@ -66,7 +66,7 @@ fi
 #Go into directory to perform the wordpress installation
 cd /var/www/$domain
 sudo wp core download  --allow-root
-sudo wp core config --dbname=vsdg --dbuser=david --dbpass=davidv --extra-php --allow-root <<PHP
+sudo wp core config --dbname=vsdg --dbuser=vsdg --dbpass=vsdgv --extra-php --allow-root <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);

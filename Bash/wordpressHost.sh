@@ -64,9 +64,9 @@ sudo a2dissite 000-default
 
 sudo mysql -uroot<<MYSQL_SCRIPT
 CREATE DATABASE vsdg;
-CREATE USER 'david'@'%' IDENTIFIED BY 'davidv';
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'davidv';
-GRANT ALL PRIVILEGES ON vsdg.* TO 'david'@'%';
+CREATE USER 'vsdg'@'%' IDENTIFIED BY 'vsdgv';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'vsdgv';
+GRANT ALL PRIVILEGES ON vsdg.* TO 'vsdg'@'%';
 MYSQL_SCRIPT
 
 
@@ -82,7 +82,7 @@ fi
 #Go into directory to perform the wordpress installation
 cd /var/www/$domain
 sudo wp core download  --allow-root
-sudo wp core config --dbname=vsdg --dbuser=david --dbpass=davidv --extra-php --allow-root <<PHP
+sudo wp core config --dbname=vsdg --dbuser=vsdg --dbpass=vsdgv --extra-php --allow-root <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
