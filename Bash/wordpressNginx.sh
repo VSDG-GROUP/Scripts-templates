@@ -1,5 +1,13 @@
 
 
+if $1 == ""(
+  goto EOF
+)
+
+if $2 == ""(
+read -p 'Type database password :' $2=${2}
+)
+
 #First update
 sudo apt-get update
 #Install lamp
@@ -7,9 +15,13 @@ sudo apt install nginx
 sudo service nginx restart
 
 sudo apt install mariadb-server  php-fpm php-common php-mysql php-gmp php-curl php-intl php-mbstring php-xmlrpc php-gd php-xml php-cli php-zip
-sudo mysql_secure_installation
+ 
+ sudo mysql -uroot<<MYSQL_SCRIPT
+ ALTER USER 'root'@'localhost' IDENTIFIED BY "${2}";
+ flush privileges;
+MYSQL_SCRIPT
 
-sudo nano /etc/nginx/sites-enabled/default
+
 sudo service nginx restart
 
 
